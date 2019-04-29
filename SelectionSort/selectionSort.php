@@ -6,11 +6,11 @@
  */
 function main(): void
 {
-    $array = [3, -1, 4, 5, 8, 7, 6, 4, 2, 3];
-    $newArray = selectionSort($array, count($array));
+    $array = [3, -1, 4, 5, 8, 7, 9, 6, 4, 2, 3];
+    selectionSort($array, count($array));
 
     fwrite(STDOUT, "排序结果： \n");
-    foreach ($newArray as $value) {
+    foreach ($array as $value) {
         fwrite(STDOUT, $value . "\n");
     }
 }
@@ -19,9 +19,9 @@ function main(): void
  * 选择排序
  * @param array $array
  * @param int $length
- * @return array
+ * @return void
  */
-function selectionSort(array $array, int $length): array
+function selectionSort(array &$array, int $length): void
 {
     for ($i = 0; $i < $length - 1; $i ++) { // 由于每次都是和最后面的数字进行比较，所以最后一位不需要循环
         $min = $i;
@@ -30,11 +30,20 @@ function selectionSort(array $array, int $length): array
                 $min = $j;
             }
         }
-        $swap = $array[$i];
-        $array[$i] = $array[$min];
-        $array[$min] = $swap;
+        swap($array[$i], $array[$min]);
     }
-    return $array;
+}
+
+/**
+ *
+ * @param mixed $firstVariable
+ * @param mixed $lastVariable
+ */
+function swap(&$firstVariable, &$lastVariable)
+{
+    $temp = $firstVariable;
+    $firstVariable = $lastVariable;
+    $lastVariable = $temp;
 }
 
 main();
