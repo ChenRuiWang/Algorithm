@@ -1,0 +1,15 @@
+{
+    "name": "randychan/algorithm",
+    "description": "algorithm",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "chenruiwang",
+            "email": "m17607475471@163.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    }
+}
