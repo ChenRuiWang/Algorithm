@@ -1,17 +1,27 @@
 <?php
 
-function main()
+/**
+ * main
+ * @return void
+ */
+function main(): void
 {
     $arr = [3, 1, 4, 5, 8, 7, 6, 4, 2, 3];
     $newArr = bubbleSort($arr, count($arr) - 1);
 
-    echo "排序结果: \n";
+    fwrite(STDOUT, "排序结果: \n");
     foreach ($newArr as $value) {
-        echo $value . "\n";
+        fwrite(STDOUT, $value . "\n");
     }
 }
 
-function bubbleSort($arr, $length)
+/**
+ * 冒泡排序
+ * @param $arr
+ * @param $length
+ * @return array
+ */
+function bubbleSort(array $arr, int $length): array
 {
     for ($i = 0; $i < $length; ++$i) {
         for ($j = 0; $j < $length - $i; ++$j) {
