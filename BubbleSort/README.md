@@ -19,36 +19,46 @@
  */
 function main(): void
 {
-    $arr = [3, 1, 4, 5, 8, 7, 6, 4, 2, 3];
-    $newArr = bubbleSort($arr, count($arr) - 1);
+    $array = [3, 1, 4, 5, 8, -1, 7, 6, 4, 2, 3];
+    bubbleSort($array, count($array) - 1);
 
     fwrite(STDOUT, "排序结果: \n");
-    foreach ($newArr as $value) {
+    foreach ($array as $value) {
         fwrite(STDOUT, $value . "\n");
     }
 }
 
 /**
  * 冒泡排序
- * @param $arr
+ * @param $array
  * @param $length
- * @return array
+ * @return void
  */
-function bubbleSort(array $arr, int $length): array
+function bubbleSort(array &$array, int $length): void
 {
     for ($i = 0; $i < $length; ++$i) {
         for ($j = 0; $j < $length - $i; ++$j) {
-            if ($arr[$j] > $arr[$j + 1]) {
+            if ($array[$j] > $array[$j + 1]) {
                 // 交换位置
-                $swap = $arr[$j];
-                $arr[$j] = $arr[$j + 1];
-                $arr[$j + 1] = $swap;
+                swap($array[$j], $array[$j + 1]);
             }
         }
     }
+}
 
-    return $arr;
+/**
+ *
+ * @param mixed $firstVariable
+ * @param mixed $lastVariable
+ * @return void
+ */
+function swap(&$firstVariable, &$lastVariable): void
+{
+    $temp = $firstVariable;
+    $firstVariable = $lastVariable;
+    $lastVariable = $temp;
 }
 
 main();
+
 ```

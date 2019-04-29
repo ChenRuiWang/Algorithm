@@ -38,8 +38,9 @@ function selectionSort(array &$array, int $length): void
  *
  * @param mixed $firstVariable
  * @param mixed $lastVariable
+ * @return void
  */
-function swap(&$firstVariable, &$lastVariable)
+function swap(&$firstVariable, &$lastVariable): void
 {
     $temp = $firstVariable;
     $firstVariable = $lastVariable;
