@@ -10,3 +10,4 @@ PHP实现各种排序，希望能坚持下去。
 - #### [插入排序](https://github.com/ChenRuiWang/Algorithm/tree/master/InsertionSort)
 - #### [快速排序](https://github.com/ChenRuiWang/Algorithm/tree/master/QuickSort)
 - #### [希尔排序](https://github.com/ChenRuiWang/Algorithm/tree/master/ShellSort)
+- #### [归并排序](https://github.com/ChenRuiWang/Algorithm/tree/master/MergeSort)
